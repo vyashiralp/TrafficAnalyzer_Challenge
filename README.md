@@ -9,6 +9,16 @@ Output:
 - Search Keyword (i.e. "Laffy Taffy") 
 - Revenue (i.e. $12.95)
 
+The final output also follows the following requirements:
+1. A header row needs to be included. Use the above bulleted items for each column header,
+minus the example.
+2. Sorted by revenue, descending, so the client can easily review which keyword is performing the
+best.
+3. The output file should have the following naming convention:
+[Date]_SearchKeywordPerformance.tab
+[Date] corresponds to the date the application executed for
+The format should be YYYY-mm-dd (i.e. 2009-10-08)
+
 **data folder** : Consists of input data files and data test files
 
 **deployment folder** : This folder holds terraform scripts for building AWS resources like lambda, s3, sns ,roles and policies
