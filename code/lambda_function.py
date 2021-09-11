@@ -135,7 +135,7 @@ class TrafficAnalyser(object):
 		if 1 in df.event_list:
 			return df[df.event_list == 1][output_columns]
 		else:
-			return "Event list is not 1"
+			print("Event list is not 1")
 
 	def get_search_engine_keyword(self,df):
 		"""
