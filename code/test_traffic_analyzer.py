@@ -4,16 +4,24 @@ import pandas as pd
 from lambda_function import TrafficAnalyser
 
 class TestTrafficAnalyzerMethods(unittest.TestCase):
-	
+	"""
+	Test Class for checking some functionality of TrafficAnalyser Class in lambda_function.py
+	"""
 
 	def test_errors_raised(self):
+		"""
+		Test Case to check if the function preprocess_product_list raises ValueError on passing incorrect number of columns in product_list
+		"""
 		test_data_file = '../data/input/data_test_file.tsv'
 		tdf = pd.read_csv(test_data_file, delimiter = '\t')
 		tdf.sort_values('ip', inplace = True)
-		with self.assertRaises(ValueError):
+		with self.assertRaises(ValueError): 
 			TrafficAnalyser.preprocess_product_list(self,tdf)
 			
 	def test_event_list(self):
+		"""
+		Test Case to check if the function get_revenue function returns "Event list is not 1" message on passinf a dataframe with not event_list = 1
+		"""
 		df_test = pd.DataFrame(['1254033478','9/27/2009 6:37','Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_4_11; en) AppleWebKit/525.27.1 (KHTML, like Gecko) Version/3.2.1 Safari/525.27.1',
 		'112.33.98.231',2,'Salt Lake City','UT','US','Home','http://www.esshopzilla.com','Electronics;Zune - 328GB;1;;'
 		,'http://search.yahoo.com/search?p=cd+player&toggle=1&cop=mss&ei=UTF-8&fr=yfp-t-701','Electronics','Zune','1',0])
